@@ -1,3 +1,5 @@
+系统
+========
 
 yum update
 
@@ -20,13 +22,25 @@ yum makecache
         CentOS/RHEL 6.x:
         rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
         
+    
+安装PHP
+======
+
+
+                php -v 
+                yum remove php*
+                
+                yum install httpd 
+                yum install php70w 
+                yum install  php70w-* --skip-broken
+                
+                
         
-php -v 
-yum remove php-common*
-yum install php70w php70w-opcache php70w-mbstring php70w-crypt
-yum -y install httpd
+
+
 
 mongodb install:
+=====
 
 yum install php70w-pecl-mongo mongodb mongodb-devel mongodb-server
 vi /etc/mongodb.conf
