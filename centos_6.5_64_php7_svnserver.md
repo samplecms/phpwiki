@@ -39,20 +39,56 @@ yum makecache
 
 
 
-mongodb install:
+mongodb.so install:
 =====
 
-yum install php70w-pecl-mongo mongodb mongodb-devel mongodb-server
-vi /etc/mongodb.conf
 
-      
-      logpath = /data/mongodb/mongodb.log
-      dbpath =/data/mongodb
-          
-mkdir -p /data/mongodb
-chown mongodb:mongodb -R /data/mongodb
+        yum install openssl openssl-devel
+        
+        pecl install mongodb
+        
+        vi /etc/php.d/mongodb.ini
+        
+        写入
+        
+        extension=mongodb.so
 
-/etc/init.d/mongod start
+
+git:
+        
+        ssh-keygen -t rsa -b 4096 -C "test@wstaichi.com"
+
+        more /root/.ssh/id_rsa.pub
+        
+        复制内容到
+        
+        https://github.com/settings/ssh
+        
+        
+        
+monogodb install:
+        
+        
+         wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.2.0.tgz
+         
+         tar -zxvf mongodb-linux-x86_64-3.2.0.tgz
+        
+         mkdir -p /www/data
+         
+         mv mongodb-linux-x86_64-3.2.0 /www/data
+         
+         mv mongodb-linux-x86_64-3.2.0/ mongodb
+         
+         mkdir db
+         
+         mkdir log
+         
+         /www/data/mongodb/bin/mongod --dbpath /www/data/db --logpath /www/data/log/db.log  --port 19843
+         
+         
+
+##./bin/mongod --dbpath=./db --logpath=./log/mongodb.log --fork --auth
+ 
 
 
 
