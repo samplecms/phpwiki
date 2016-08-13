@@ -90,6 +90,54 @@ monogodb install:
 ##./bin/mongod --dbpath=./db --logpath=./log/mongodb.log --fork --auth
  
 
+SVN
+=============
+
+        # yum -y install subversion
+        
+        svnserve -d -r /www/svn/
+        
+        svnadmin create /www/svn/pro
+        
+ 
+vi /etc/rc.local
+
+        service httdp restart
+
+        svnserve -d -r /www/svn/
+
+        /www/data/mongodb/bin/mongod --dbpath /www/data/db --logpath /www/data/log/db.log  --port 19843
+
+
+        
+will test
+==========
+        
+post-commit
+==========
+        
+        export LANG=en_US.UTF-8
+         
+        
+        /usr/bin/svn update /www/ -username name -password pwd
+
+SVN权限
+========
+
+        chmod +x post-commit
+        
+        chown -R apache:apache $WEB
+        
+WEB
+=======
+
+
+        chown -R apache:apache WEBDIR
+        
+        
+        
+        
+
 
 
 
