@@ -1,0 +1,20 @@
+
+cp post-commit.tmpl post-commit
+vi post-commit
+chmod +x post-commit
+
+        
+        #!/bin/sh
+        
+        REPOS="$1"
+        REV="$2"
+        
+        
+        
+        
+        
+        
+        
+        export LANG=en_US.UTF-8
+        
+        /usr/bin/svn update /www/websites/wstaichi.com  --username user --password pwd --no-auth-cache   > /dev/null
