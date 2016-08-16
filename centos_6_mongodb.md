@@ -1,4 +1,5 @@
-
+php7.0不适用此方法
+=========
 
 yum info mongo-10gen
 
