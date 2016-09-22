@@ -1,4 +1,5 @@
 <?php
+
 class chart{
 	
 	
@@ -51,8 +52,8 @@ class chart{
 		foreach($arsort as $k=>$v1){
 			$v = $next[$k];
 			$bai = number_format(($v[1]/$sum)*100,2)."%";
-			$k_show = $k."(".$v[1]." , ".$bai.") ";
-			$next_str .="<span style='background:".$v[0].";display:block;margin-top:10px;' class='label label-default'>$k_show</span>";
+			$k_show = $k." ( ".$v[1]." , ".$bai." ) ";
+			$next_str .="<span style='background:".$v[0].";display:block;margin-top:10px;text-align:right;' class='label label-default'>$k_show</span>";
 		}
 		$next_str .= "</div>";
 		
