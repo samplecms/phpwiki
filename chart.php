@@ -1,5 +1,4 @@
 <?php
-
 class chart{
 	
 	
@@ -32,9 +31,34 @@ class chart{
 				]
 			];
 		}
+		$sum = 0;
+		foreach($data as $v){
+			$next[$v['label']] = [
+					$v['color'],
+					$v['value'],
+			];
+			$sum += $v['value'];
+			
+			$arsort[$v['label']] = $v['value'];
+		}
+		
+		
+		arsort($arsort);
 		$data = json_encode($data);
+		
+		$next_str = "<div style='float:left;'>";
+		
+		foreach($arsort as $k=>$v1){
+			$v = $next[$k];
+			$bai = number_format(($v[1]/$sum)*100,2)."%";
+			$k_show = $k."(".$v[1]." , ".$bai.") ";
+			$next_str .="<span style='background:".$v[0].";display:block;margin-top:10px;' class='label label-default'>$k_show</span>";
+		}
+		$next_str .= "</div>";
+		
+		
 		$tpl = '
-		<canvas id="'.$canvas.'" width="400" height="400"></canvas>
+		<canvas style="float:left;" id="'.$canvas.'" width="200" height="200"></canvas>'.$next_str.'
 		<script type="text/javascript">
 		$(function(){
 		
