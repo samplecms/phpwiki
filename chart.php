@@ -40,7 +40,11 @@ class chart{
 			$next[$v['label']] = [
 					$v['color'],
 					$v['value'],
+					
 			];
+			if($v['bai']){
+				$next[$v['label']]['bai'] = $v['bai'];
+			}
 			$sum += $v['value'];
 			
 			$arsort[$v['label']] = $v['value'];
