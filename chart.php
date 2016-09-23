@@ -1,14 +1,17 @@
 <?php
-
+namespace classes\v2;
 class chart{
 	
+	static function bai($a,$sum){
+		return number_format(($a/$sum)*100,2)."%";
+	}
 	
 	static function show($opt = []){
 		$canvas = "canvas_".\Core\Str::rand(10);
 		$danwei = $opt['value']?:'人数';
 		$data  = $opt['data'];
 		if(!$data){
-			$data = [
+			/*$data = [
 				[
 						'value'=> 300,
 						'color'=>"#F7464A",
@@ -30,7 +33,7 @@ class chart{
 						'label'=> "Yellow"
 						
 				]
-			];
+			];*/
 		}
 		$sum = 0;
 		foreach($data as $v){
@@ -51,7 +54,12 @@ class chart{
 		
 		foreach($arsort as $k=>$v1){
 			$v = $next[$k];
-			$bai = number_format(($v[1]/$sum)*100,2)."%";
+			$bai = null;
+			if($v['bai']){
+				$bai = $v['bai'];
+			}else{
+				$bai = number_format(($v[1]/$sum)*100,2)."%";
+			}
 			$k_show = $k." ( ".$v[1]." , ".$bai." ) ";
 			$next_str .="<span style='background:".$v[0].";display:block;margin-top:10px;text-align:right;' class='label label-default'>$k_show</span>";
 		}
