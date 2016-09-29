@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+<link href="http://cdn.bootcss.com/animate.css/3.5.2/animate.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/fullPage.js/2.8.6/jquery.fullPage.css" rel="stylesheet">
+
+<script src="http://cdn.bootcss.com/jquery/1.12.2/jquery.js"></script>
+<script src="http://cdn.bootcss.com/fullPage.js/2.8.6/jquery.fullPage.js"></script>
+
+</head>
+<body>
+
+
+
+
+
+<div id="fullpage">
+    <div class="section">
+    	<p class="animated flipInX"  >我是第1页</p>
+    	
+    	<p class="animated flipInY"  >就是内容测试而已</p>
+    </div>
+    
+    <div class="section">
+    
+    	<p  class="animated flipInY" >我是第2页</p>
+    
+    </div>
+    
+    <div class="section">
+    
+    	<p  class="animated infinite bounce" >我是第3页</p>
+    
+    </div>
+    
+    <div class="section">
+    
+    	<p  class="animated infinite bounce" >我是第4页</p>
+    
+    </div>
+    
+    <div class="section">
+    
+    	<p  class="animated infinite bounce" >我是第5页</p>
+    
+    </div>
+    
+    
+</div>
+
+<script>
+
+$(document).ready(function() {
+    $('#fullpage').fullpage({
+    	
+    	//events
+        onLeave: function(index, nextIndex, direction){
+        	
+        	var se = $('#fullpage').find('.section');
+        	se.find('.animated').hide();
+        	
+        },
+        
+        afterLoad: function(anchorLink, index){
+        	var se = $('#fullpage').find('.section').eq(index-1);
+        	$(se.find('.animated')).each(function(e){
+        		//当前找到的class 
+        		 var cls = $(this).attr('class');
+        		//debug 
+        		console.log(cls);
+        		 //删除class
+        		 $(this).removeClass().hide();
+        		 var obj = this;
+        		 $(obj).addClass(cls).show();
+        		 
+        		
+        	});
+        	console.log(index);
+        	
+        } 
+        
+    	
+    });
+});
+
+</script>
+
+
+</body>
+</html>
