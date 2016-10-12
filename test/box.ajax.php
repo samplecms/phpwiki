@@ -4,16 +4,10 @@
 <script src="http://cdn.bootcss.com/jquery.touchswipe/1.6.18/jquery.touchSwipe.js"></script>
 
 <script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
-<script src="http://cdn.bootcss.com/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
 <script src="http://cdn.bootcss.com/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="http://cdn.bootcss.com/fancybox/2.1.5/helpers/jquery.fancybox-buttons.js"></script>
-<script src="http://cdn.bootcss.com/fancybox/2.1.5/helpers/jquery.fancybox-media.js"></script>
-<script src="http://cdn.bootcss.com/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.js"></script>
 
 
 <link href="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css" rel="stylesheet">
-<link href="http://cdn.bootcss.com/fancybox/2.1.5/helpers/jquery.fancybox-buttons.css" rel="stylesheet">
-<link href="http://cdn.bootcss.com/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.css" rel="stylesheet">
 
 
 <script src="http://cdn.bootcss.com/jquery-infinitescroll/2.0b2.120520/jquery.infinitescroll.js"></script>
